@@ -1,11 +1,13 @@
 <template>
-  <h1 class="font-bold text-3xl underline">
-    Hello world!
-  </h1>
+  <Hero />
 </template>
 
 <script>
+import Hero from "../components/hero/Hero"
 export default {
   name: 'IndexPage',
+  components: {
+    Hero
+  }
 }
 </script>
