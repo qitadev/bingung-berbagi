@@ -1,17 +1,20 @@
 <template>
   <div class="bg-primary-bg-color">
     <HeaderApp />
-    <Nuxt />
+    <main>
+      <Nuxt />
+    </main>
   </div>
 </template>
 
 <script>
+import HeaderApp from "~/components/base/HeaderApp";
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "default.vue"
+  name: "default",
+  components: {
+    HeaderApp
+  }
 }
 </script>
 
-<style scoped>
-
-</style>
