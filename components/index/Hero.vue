@@ -1,6 +1,6 @@
 <template>
-  <div class="max-w-5xl flex md:flex-row flex-col items-center mx-auto px-6 sm:px-4 py-8 sm:py-12">
-    <div class="content-wrapper md:w-1/2 w-full flex flex-col justify-start">
+  <section class="max-w-5xl flex md:flex-row flex-col items-center mx-auto px-6 sm:px-4 py-8 sm:py-12">
+    <article class="content-wrapper md:w-1/2 w-full flex flex-col justify-start">
       <p class="text-green-primary">#KitaBingungKitaBerbagi</p>
       <h1 class="font-bold text-opacity-75 text-5xl break-normal" style="line-height: 1.3">
         Permudah <br> Aktivitas <br> Berbagimu <br> Bersama Kami
@@ -12,11 +12,11 @@
         <NuxtLink to="/" class="px-4 py-2 w-full sm:w-fit rounded-md bg-orange-primary text-white text-center">Yuk Donasi</NuxtLink>
         <NuxtLink to="/" class="px-4 py-2 w-full sm:w-fit mt-4 sm:mt-0 sm:ml-6 rounded-md border border-orange-primary text-orange-primary text-center">Dokumentasi Berbagi</NuxtLink>
       </div>
-    </div>
-    <div class="image-wrapper md:w-1/2 w-full p-4">
+    </article>
+    <article class="image-wrapper md:w-1/2 w-full p-4">
       <img src="~/assets/images/index-page/hero-illustration.png" class="w-full" alt="Illustration image">
-    </div>
-  </div>
+    </article>
+  </section>
 </template>
 
 <script>

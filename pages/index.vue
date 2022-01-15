@@ -3,6 +3,8 @@
     <Hero />
     <Counter />
     <Jumbotron :batch="nextBatch"/>
+    <Donation />
+    <Gallery />
   </div>
 </template>
 
@@ -11,6 +13,8 @@ import moment from "moment"
 import Hero from "../components/index/Hero"
 import Counter from "../components/index/Counter"
 import Jumbotron from "../components/index/Jumbotron"
+import Donation from "../components/index/Donation"
+import Gallery from "../components/index/Gallery";
 import config from "../plugins/google-sheets"
 
 export default {
@@ -18,7 +22,9 @@ export default {
   components: {
     Hero,
     Counter,
-    Jumbotron
+    Jumbotron,
+    Donation,
+    Gallery
   },
   data() {
     return {
