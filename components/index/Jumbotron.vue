@@ -16,7 +16,7 @@
             <h1 class="font-semibold text-7xl text-white text-center rounded-xl bg-green-primary/50 p-4">
               10
             </h1>
-            <p class="font-light text-lg text-white text-center mt-2">
+            <p class="font-semibold text-lg text-white text-center mt-2">
               HARI
             </p>
           </article>
@@ -24,7 +24,7 @@
             <h1 class="font-semibold text-7xl text-white text-center rounded-xl  bg-green-primary/50 p-4">
               06
             </h1>
-            <p class="font-light text-lg text-white text-center mt-2">
+            <p class="font-semibold text-lg text-white text-center mt-2">
               JAM
             </p>
           </article>
@@ -34,7 +34,7 @@
             <h1 class="font-semibold text-7xl text-white text-center rounded-xl  bg-green-primary/50 p-4">
               28
             </h1>
-            <p class="font-light text-lg text-white text-center mt-2">
+            <p class="font-semibold text-lg text-white text-center mt-2">
               MENIT
             </p>
           </article>
@@ -42,7 +42,7 @@
             <h1 class="font-semibold text-7xl text-white text-center rounded-xl  bg-green-primary/50 p-4">
               59
             </h1>
-            <p class="font-light text-lg text-white text-center mt-2">
+            <p class="font-semibold text-lg text-white text-center mt-2">
               DETIK
             </p>
           </article>

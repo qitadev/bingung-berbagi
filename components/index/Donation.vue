@@ -4,33 +4,94 @@
     <h2 class="font-bold text-2xl leading-normal">
       Berbagi Senyuman dan <br> Berbagi Kebahagiaan Bersama Kami
     </h2>
-    <section class="w-full flex justify-between py-8">
-      <article class="flex flex-col">
-        <section class="w-full h-44">
-          <img src="~/assets/images/index-page/batch-1.png" alt="batch 1" class="w-full h-auto overflow-y-hidden rounded-t-lg">
-        </section>
-        <section class="flex-1 rounded-b-lg p-4 bg-white">
-          <div class="flex flex-row items-center justify-between">
-            <h1 class="">
-              Bingung Berbagi
-            </h1>
-            <p class="py-1 px-2 mt-2 sm:mt-0 bg-gray-100 rounded-lg text-gray-500" style="font-size: 12px">Batch 8</p>
-          </div>
-          <div class="flex items-center mt-2">
-            <img src="~/assets/icons/location.svg" alt="Location logo" class="w-4">
-            <p class="text-gray-500 ml-4">Yogyakarta</p>
-          </div>
-          <button class="w-full rounded-lg bg-orange-primary mt-4 py-1 text-white">Donasi Sekarang</button>
-        </section>
-      </article>
+    <section v-if="sortedDescBatch" class="w-full py-8">
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide v-for="batch in sortedDescBatch" :key="batch.id">
+          <article class="flex flex-col">
+            <section class="w-full h-44">
+              <img :src="batch.batch_img" alt="batch 1" class="w-full overflow-y-hidden rounded-lg">
+            </section>
+            <section class="flex-1 rounded-b-lg p-4 bg-white">
+              <div class="flex flex-row items-center justify-between">
+                <h1>
+                  Bingung Berbagi
+                </h1>
+                <p class="py-1 px-2 mt-2 sm:mt-0 bg-gray-100 rounded-lg text-gray-500" style="font-size: 12px">{{ batch.batch_name }}</p>
+              </div>
+              <div class="flex items-center mt-2">
+                <img src="~/assets/icons/location.svg" alt="Location logo" class="w-4 self-center">
+                <p class="text-gray-500 ml-2">{{ batch.location }}</p>
+              </div>
+              <button v-if="batch.is_done" class="w-full rounded-lg border border-orange-primary text-orange-primary mt-4 py-1">Lihat laporan</button>
+              <button v-else class="w-full rounded-lg bg-orange-primary mt-4 py-1 text-white">Donasi Sekarang</button>
+            </section>
+          </article>
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
     </section>
   </section>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Donation"
+  name: "Donation",
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  props: {
+    batches: {
+      type: Array,
+      default: () => ([]),
+    }
+  },
+  data() {
+    return {
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'progressbar'
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        breakpoints: {
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30
+          },
+          425: {
+            slidesPerView: 2,
+            spaceBetween: 20
+          },
+          250: {
+            slidesPerView: 1,
+            spaceBetween: 10
+          }
+        }
+      }
+    }
+  },
+  computed: {
+    sortedDescBatch() {
+      return (this.batches || []).sort((a,b) => b.id - a.id);
+    }
+  }
 }
 </script>
 

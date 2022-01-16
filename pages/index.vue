@@ -3,8 +3,9 @@
     <Hero />
     <Counter />
     <Jumbotron :batch="nextBatch"/>
-    <Donation />
+    <Donation :batches="batches" />
     <Gallery />
+    <Contact />
   </div>
 </template>
 
@@ -14,7 +15,8 @@ import Hero from "../components/index/Hero"
 import Counter from "../components/index/Counter"
 import Jumbotron from "../components/index/Jumbotron"
 import Donation from "../components/index/Donation"
-import Gallery from "../components/index/Gallery";
+import Gallery from "../components/index/Gallery"
+import Contact from "../components/index/Contact";
 import config from "../plugins/google-sheets"
 
 export default {
@@ -24,7 +26,8 @@ export default {
     Counter,
     Jumbotron,
     Donation,
-    Gallery
+    Gallery,
+    Contact
   },
   data() {
     return {
@@ -33,7 +36,8 @@ export default {
   },
   computed: {
     nextBatch() {
-      return (this.batches || []).filter((item) => item.is_done === false)[0]
+      return (this.batches || []).filter((item) => item.is_done === false)
+        .sort((a,b) => new Date(b.date_batch) - new Date(a.date_batch))[0]
     }
   },
   mounted() {
@@ -62,14 +66,15 @@ export default {
           }
           const data = {
             id: _id,
-            batch_name: values[1].formattedValue,
+            batch_name: values[1].formattedValue ? values[1].formattedValue : "",
             date_batch: moment(values[2].formattedValue, "DDMMYYYY").format('DD MM YYYY'),
-            is_done: isDoneCheck
+            is_done: isDoneCheck,
+            batch_img: values[4].formattedValue ? values[4].formattedValue : "",
+            location: values[5].formattedValue ? values[5].formattedValue : "",
           }
           return data;
         });
-
-        console.log(this.batches);
+        console.log('List batch', this.batches);
       } catch(err) {
         alert(err)
       }
