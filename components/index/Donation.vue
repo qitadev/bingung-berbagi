@@ -13,23 +13,23 @@
             </section>
             <section class="flex-1 rounded-b-lg p-4 bg-white">
               <div class="flex flex-row items-center justify-between">
-                <h1>
+                <h1 style="font-size: 14px">
                   Bingung Berbagi
                 </h1>
-                <p class="py-1 px-2 mt-2 sm:mt-0 bg-gray-100 rounded-lg text-gray-500" style="font-size: 12px">{{ batch.batch_name }}</p>
+                <p class="py-1 px-2 bg-gray-100 rounded-lg text-gray-500" style="font-size: 12px">{{ batch.batch_name }}</p>
               </div>
               <div class="flex items-center mt-2">
                 <img src="~/assets/icons/location.svg" alt="Location logo" class="w-4 self-center">
-                <p class="text-gray-500 ml-2">{{ batch.location }}</p>
+                <p class="text-gray-500 ml-2" style="font-size: 14px">{{ batch.location }}</p>
               </div>
-              <button v-if="batch.is_done" class="w-full rounded-lg border border-orange-primary text-orange-primary mt-4 py-1">Lihat laporan</button>
-              <button v-else class="w-full rounded-lg bg-orange-primary mt-4 py-1 text-white">Donasi Sekarang</button>
+              <button v-if="batch.is_done" class="w-full rounded-lg border border-orange-primary text-orange-primary mt-4 py-1" style="font-size: 14px">
+                Lihat laporan
+              </button>
+              <button v-else class="w-full rounded-lg bg-orange-primary mt-4 py-1 text-white" style="font-size: 14px">Donasi Sekarang</button>
             </section>
           </article>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
       </swiper>
     </section>
   </section>
@@ -63,6 +63,7 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         },
+        freeMode: true,
         slidesPerView: 4,
         spaceBetween: 30,
         loop: true,

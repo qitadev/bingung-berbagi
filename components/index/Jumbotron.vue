@@ -10,7 +10,7 @@
         </p>
         <NuxtLink to="/" class="px-4 py-2 mt-2 w-44 rounded-full bg-orange-primary text-white text-center">Yuk Donasi</NuxtLink>
       </section>
-      <section class="countdown-wrapper w-full sm:w-3/5 flex flex-col md:flex-row sm:justify-between items-center p-2 sm:p-4 mt-2">
+      <section class="countdown-wrapper w-full sm:w-3/5 flex flex-col lg:flex-row sm:justify-between items-center p-2 sm:p-4 mt-2">
         <div class="flex flex-row w-full justify-evenly mt-4 sm:mt-0">
           <article class="item flex flex-col justify-center">
             <h1 class="font-semibold text-7xl text-white text-center rounded-xl bg-green-primary/50 p-4">

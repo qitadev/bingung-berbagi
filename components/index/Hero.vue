@@ -9,8 +9,12 @@
         Mereka yang paling bahagia adalah mereka yang melakukan paling banyak untuk orang lain" - Booker T. Washington
       </p>
       <div class="action-wrapper flex flex-col justify-start sm:flex-row items-center my-2">
-        <NuxtLink to="/" class="px-4 py-2 w-full sm:w-fit rounded-md bg-orange-primary text-white text-center">Yuk Donasi</NuxtLink>
-        <NuxtLink to="/" class="px-4 py-2 w-full sm:w-fit mt-4 sm:mt-0 sm:ml-6 rounded-md border border-orange-primary text-orange-primary text-center">Dokumentasi Berbagi</NuxtLink>
+        <NuxtLink to="/" class="px-4 py-2 w-full sm:w-fit rounded-md bg-orange-primary text-white text-center hover:bg-orange-700 focus:bg-orange-700">
+          Yuk Donasi
+        </NuxtLink>
+        <NuxtLink to="/" class="px-4 py-2 w-full sm:w-fit mt-4 sm:mt-0 sm:ml-6 rounded-md border border-orange-primary text-orange-primary text-center hover:bg-orange-primary hover:text-white">
+          Dokumentasi Berbagi
+        </NuxtLink>
       </div>
     </article>
     <article class="image-wrapper md:w-1/2 w-full p-4">

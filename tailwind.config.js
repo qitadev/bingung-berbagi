@@ -15,6 +15,12 @@ module.exports = {
       },
       backgroundImage: {
         'index-countdown': "url('~/assets/images/index-page/bg-jumbotron.png')",
+      },
+      fontFamily: {
+        Poppins: ["Poppins", "sans-serif"]
+      },
+      screens: {
+        'xs': '325px'
       }
     },
 
