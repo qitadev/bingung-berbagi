@@ -7,7 +7,23 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'green-primary': '#119283',
+        'orange-primary': '#F16500',
+        'primary-bg-color': '#FFFDF5'
+      },
+      backgroundImage: {
+        'index-countdown': "url('~/assets/images/index-page/bg-jumbotron.png')",
+      },
+      fontFamily: {
+        Poppins: ["Poppins", "sans-serif"]
+      },
+      screens: {
+        'xs': '325px'
+      }
+    },
+
   },
   plugins: [],
 }
