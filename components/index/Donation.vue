@@ -24,7 +24,7 @@
               </svg>
               <p class="text-gray-500 ml-2 text-sm">{{ batch.location }}</p>
             </div>
-            <NuxtLink v-if="batch.isDone" :to="`/donations/${batch.id}`" class="w-full rounded-lg border border-orange-primary text-orange-primary mt-4 py-1 block text-center">
+            <NuxtLink v-if="batch.isDone == 1" :to="`/donations/${batch.id}`" class="w-full rounded-lg border border-orange-primary text-orange-primary mt-4 py-1 block text-center">
               Lihat laporan
             </NuxtLink>
             <NuxtLink v-else :to="`/donations/${batch.id}`" class="w-full rounded-lg bg-orange-primary mt-4 py-1 text-white block text-center">
