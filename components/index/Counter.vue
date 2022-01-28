@@ -1,5 +1,5 @@
 <template>
-  <section id="counter" class="max-w-5xl mx-auto flex md:flex-row flex-col items-center justify-between p-6 sm:p-4">
+  <section id="counter" class="max-w-5xl mx-auto flex md:flex-row flex-col items-center justify-between p-6 sm:p-4 mt-16">
     <article class="item-wrapper bg-white rounded-xl flex flex-row items-center w-full p-4 shadow-lg">
       <img src="~/assets/images/index-page/user-icon.png" alt="user icon" class="w-16">
       <div class="desc-wrap flex flex-col justify-start ml-4">
