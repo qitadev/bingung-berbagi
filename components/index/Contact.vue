@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-5xl mx-auto flex flex-col sm:flex-row p-4 sm:items-start my-16">
+  <section class="max-w-5xl mx-auto flex flex-col sm:flex-row px-5 sm:items-start my-20">
     <article class="w-full sm:w-1/3 flex flex-col justify-start">
       <h1 class="text-green-primary">
         Kolaborasi

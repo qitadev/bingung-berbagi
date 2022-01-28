@@ -1,6 +1,6 @@
 <template>
-  <section class="w-full bg-green-primary my-16">
-    <article class="max-w-5xl px-6 mx-auto py-20 grid md:grid-cols-2 gap-8">
+  <section class="w-full bg-green-primary my-20">
+    <article class="max-w-5xl px-5 mx-auto py-20 grid md:grid-cols-2 gap-8">
       <section>
         <h1 class="text-3xl font-bold text-white">
           Segera Donasi Sekarang

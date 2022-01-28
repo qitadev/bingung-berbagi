@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-5xl flex flex-col mx-auto px-4 mt-16">
+  <section class="max-w-5xl flex flex-col mx-auto px-5 mt-20">
     <h1 class="text-base text-green-primary">Galeri</h1>
     <h2 class="font-bold text-2xl leading-normal">
       Berbagi Senyuman dan <br> Berbagi Kebahagiaan Bersama Kami

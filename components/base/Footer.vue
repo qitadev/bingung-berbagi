@@ -42,7 +42,7 @@
     </article>
     <article class="w-full bg-green-900 text-white">
       <p class="max-w-5xl mx-auto px-4 py-2 text-center">
-        Hak cipta 2021 - Bingung Berbagi
+        Bingung Berbagi © {{ new Date().getFullYear() }}
       </p>
     </article>
   </footer>

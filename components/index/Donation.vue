@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-5xl flex flex-col mx-auto p-4">
+  <section class="max-w-5xl flex flex-col mx-auto px-5">
     <h1 class="text-base text-green-primary">Program Donasi</h1>
     <h2 class="font-bold text-2xl leading-normal">
       Berbagi Senyuman dan <br> Berbagi Kebahagiaan Bersama Kami
