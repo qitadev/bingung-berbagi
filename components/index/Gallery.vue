@@ -5,36 +5,26 @@
       Berbagi Senyuman dan <br> Berbagi Kebahagiaan Bersama Kami
     </h2>
     <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-      <article class="w-auto h-auto">
-        <img src="~/assets/images/index-page/bg-jumbotron.png" alt="gallery image" class="w-full h-full rounded-lg">
-      </article>
-      <article class="w-auto h-auto">
-        <img src="~/assets/images/index-page/bg-jumbotron.png" alt="gallery image" class="w-full h-full rounded-lg">
-      </article>
-      <article class="w-auto h-auto">
-        <img src="~/assets/images/index-page/bg-jumbotron.png" alt="gallery image" class="w-full h-full rounded-lg">
-      </article>
-      <article class="w-auto h-auto">
-        <img src="~/assets/images/index-page/bg-jumbotron.png" alt="gallery image" class="w-full h-full rounded-lg">
-      </article>
-      <article class="w-auto h-auto">
-        <img src="~/assets/images/index-page/bg-jumbotron.png" alt="gallery image" class="w-full h-full rounded-lg">
-      </article>
-      <article class="w-auto h-auto">
-        <img src="~/assets/images/index-page/bg-jumbotron.png" alt="gallery image" class="w-full h-full rounded-lg">
-      </article>
+      <img v-for="image in images" :key="image.id" :src="image.imgUrl" alt="gallery image" class="w-full h-full rounded-lg object-cover">
     </section>
-    <button class="bg-orange-primary px-4 py-2 rounded-lg mt-4 w-fit text-white self-center">Lihat lainnya</button>
+    <nuxt-link to="/gallery" class="bg-orange-primary px-4 py-2 rounded-lg mt-4 w-fit text-white self-center">
+      Lihat lainnya
+    </nuxt-link>
   </section>
 </template>
 
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Gallery"
+  name: "Gallery",
+  data () {
+    return {
+      images: []
+    }
+  },
+  async fetch () {
+    const images = await this.$getSheetData(1);
+    this.images = images.sort((a, b) => b.id - a.id).slice(0, 6);
+  }
 }
 </script>
-
-<style scoped>
-
-</style>
