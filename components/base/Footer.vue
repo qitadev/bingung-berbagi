@@ -40,7 +40,7 @@
         </section>
       </section>
     </article>
-    <article class="w-full bg-green-900 text-white">
+    <article class="w-full text-white" style="background-color: #0E7E71;">
       <p class="max-w-5xl mx-auto px-4 py-2 text-center">
         Bingung Berbagi © {{ new Date().getFullYear() }}
       </p>
