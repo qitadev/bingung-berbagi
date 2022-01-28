@@ -40,7 +40,7 @@
         </section>
       </section>
     </article>
-    <article class="w-full bg-primary-bg-color text-gray-500">
+    <article class="w-full bg-green-900 text-white">
       <p class="max-w-5xl mx-auto px-4 py-2 text-center">
         Hak cipta 2021 - Bingung Berbagi
       </p>
