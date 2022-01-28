@@ -5,10 +5,10 @@
         <h1 class="text-3xl font-bold text-white">
           Segera Donasi Sekarang
         </h1>
-        <p class="text-white text-lg">
+        <p class="text-white mt-2">
           Bingung Berbagi {{ batch ? batch.batch_name : 'Next Batch' }}
         </p>
-        <NuxtLink to="/" class="block px-4 py-2 mt-2 w-44 rounded-md bg-orange-primary text-white text-center">Yuk Donasi</NuxtLink>
+        <NuxtLink to="/" class="block mt-4 px-4 py-2 w-44 rounded-md bg-orange-primary text-white text-center">Yuk Donasi</NuxtLink>
       </section>
       <section>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
