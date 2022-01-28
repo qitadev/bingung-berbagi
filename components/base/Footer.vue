@@ -41,9 +41,9 @@
       </section>
     </article>
     <article class="w-full bg-primary-bg-color text-gray-500">
-      <section class="max-w-5xl mx-auto flex justify-center sm:justify-start py-2 px-4">
+      <p class="max-w-5xl mx-auto px-4 py-2 text-center">
         Hak cipta 2021 - Bingung Berbagi
-      </section>
+      </p>
     </article>
   </footer>
 </template>

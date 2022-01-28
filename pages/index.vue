@@ -74,7 +74,6 @@ export default {
           }
           return data;
         });
-        console.log('List batch', this.batches);
       } catch(err) {
         alert(err)
       }
