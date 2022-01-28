@@ -1,8 +1,8 @@
 <template>
-  <section class="max-w-5xl flex md:flex-row flex-col items-center mx-auto px-5 py-8">
+  <section class="max-w-5xl flex md:flex-row flex-col items-center mx-auto px-5 pt-10">
     <article class="content-wrapper md:w-1/2 w-full flex flex-col justify-start">
       <p class="text-green-primary">#KitaBingungKitaBerbagi</p>
-      <h1 class="font-bold text-opacity-75 text-5xl break-normal" style="line-height: 1.3">
+      <h1 class="font-bold text-5xl" style="line-height: 1.3">
         Permudah <br> Aktivitas <br> Berbagimu <br> Bersama Kami
       </h1>
       <p class="text-gray-500 my-4">
