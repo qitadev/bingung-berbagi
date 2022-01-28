@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-5xl mx-auto p-4">
+  <div class="max-w-5xl mx-auto px-5 my-8">
     <nav>
       <nuxt-link to="/">
         Home
@@ -9,12 +9,12 @@
     </nav>
     <div v-if="donation" class="mt-8 grid md:grid-cols-2 gap-8">
       <div>
-        <img :src="donation.batch_img" alt="Foto Batch" class="w-full rounded-lg border">
+        <img :src="donation.batchImg" alt="Foto Batch" class="w-full rounded-lg border">
         <p class="inline-block mt-8 border-b-2 border-orange-primary">
           Detail
         </p>
         <h1 class="mt-4 font-bold text-xl">
-          Bingung Berbagi Batch #8
+          Bingung Berbagi Batch #{{ donation.batch }}
         </h1>
         <p class="mt-4 text-justify text-sm leading-loose">
           Halo orang-orang baik dimanapun berada, akhir bulan ini #KitaBingungKitaBerbagi membuka donasi kembali nih untuk orang-orang yang jalanan di sekitar Yogyakarta. Donasi yang akan terkumpul akan dialokasikan untuk kebutuhan pokok, seperti makanan, minuman dan lain-lain bagi orang-orang yang membutuhkan. Langkah kecil ini harapannya bisa membantu dan mendukung satu sama lain terlebih dalam kondisi pandemi saat ini. Mengutip dari Global Hunger Index (GHI) bahwa tingkat kepalaran di Indonesia menempati urutan ketiga tertinggi di Asia Tenggara pada 2021. Indonesia mendapatkan skor indeks sebesar 18 poin atau termasuk dalam level moderat. #KitaBingungKitaBerbagi lewat donasi ini bersinergi untuk saling membantu bersama orang-orang baik semua.
@@ -59,15 +59,15 @@
           </div>
         </div>
         <div class="mt-8 rounded-lg border bg-white p-6">
-          <h2 class="text-lg mb-2">
-            Bingung Berbagi Batch #8
+          <h2 class="text-lg mb-2 font-bold">
+            Bingung Berbagi Batch #{{ donation.batch }}
           </h2>
           <span class="text-sm">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            Yogyakarta
+            {{ donation.location  }}
           </span>
           <ul class="mt-8">
             <li>
@@ -119,7 +119,7 @@
               <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
             </svg>
             <p class="ml-4 flex-1 text-sm">
-              Gunakan kode unik "007" <b>contoh: Rp 100.008</b> serta deskripsi transfer "Bingung Berbagi #8" agar kami mudah menemukan niat baik kamu ya!
+              Gunakan kode unik "00{{ donation.batch }}" <b>contoh: Rp {{ formatNumber(100000 + +donation.batch) }}</b> serta deskripsi transfer <b>"Bingung Berbagi #{{ donation.batch }}"</b> agar kami mudah menemukan niat baik kamu ya!
             </p>
           </blockquote>
         </div>
@@ -137,7 +137,16 @@ export default {
   },
   async fetch() {
     const donations = await this.$getSheetData(0);
-    this.donation = donations.find(donation => donation.ID === this.$route.params.id);
+    this.donation = donations.find(donation => donation.id === this.$route.params.id);
+  },
+  methods: {
+    formatNumber(number) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+      }).format(number);
+    },
   }
 }
 </script>

@@ -10,14 +10,12 @@
 </template>
 
 <script>
-import moment from "moment"
 import Hero from "../components/index/Hero"
 import Counter from "../components/index/Counter"
 import Jumbotron from "../components/index/Jumbotron"
 import Donation from "../components/index/Donation"
 import Gallery from "../components/index/Gallery"
 import Contact from "../components/index/Contact";
-import config from "../plugins/google-sheets"
 
 export default {
   name: 'IndexPage',
@@ -31,8 +29,12 @@ export default {
   },
   data() {
     return {
-      batches: null,
+      batches: [],
     }
+  },
+  async fetch() {
+    const batches = await this.$getSheetData(0);
+    this.batches = batches;
   },
   computed: {
     nextBatch() {
@@ -40,44 +42,5 @@ export default {
         .sort((a,b) => new Date(b.date_batch) - new Date(a.date_batch))[0]
     }
   },
-  mounted() {
-    this.fetchData();
-  },
-  methods: {
-    async fetchData() {
-      try {
-        // eslint-disable-next-line camelcase
-        const url_endpoint = `https://sheets.googleapis.com/v4/spreadsheets/${config.id}/?key=${config.api_key}&includeGridData=true`;
-        const res = await fetch(url_endpoint);
-        const { sheets } = await res.json();
-
-        const batchSheet = sheets[0];
-        batchSheet.data[0].rowData.shift(); // Remove index pertama dari sheet batch
-        const rowData = batchSheet.data[0].rowData;
-
-        this.batches = rowData.map(item => {
-          const { values } = item;
-          const _id = parseInt(values[0].formattedValue);
-          let isDoneCheck = values[3].formattedValue;
-          if (isDoneCheck === '1') {
-            isDoneCheck = true;
-          } else {
-            isDoneCheck = false;
-          }
-          const data = {
-            id: _id,
-            batch_name: values[1].formattedValue ? values[1].formattedValue : "",
-            date_batch: moment(values[2].formattedValue, "DDMMYYYY").format('DD MM YYYY'),
-            is_done: isDoneCheck,
-            batch_img: values[4].formattedValue ? values[4].formattedValue : "",
-            location: values[5].formattedValue ? values[5].formattedValue : "",
-          }
-          return data;
-        });
-      } catch(err) {
-        alert(err)
-      }
-    },
-  }
 }
 </script>

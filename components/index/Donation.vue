@@ -4,18 +4,18 @@
     <h2 class="font-bold text-2xl leading-normal">
       Berbagi Senyuman dan <br> Berbagi Kebahagiaan Bersama Kami
     </h2>
-    <section v-if="sortedDescBatch" class="w-full py-8 overflow-auto whitespace-nowrap">
-      <div v-for="batch in sortedDescBatch" :key="batch.id" class="inline-block mr-4">
+    <section v-if="batches" class="w-full py-8 overflow-auto whitespace-nowrap">
+      <div v-for="batch in batches" :key="batch.id" class="inline-block mr-4">
         <article class="flex flex-col border rounded-lg">
           <section class="w-full h-44">
-            <img :src="batch.batch_img" alt="batch 1" class="w-full overflow-y-hidden rounded-lg">
+            <img :src="batch.batchImg" alt="batch 1" class="w-full overflow-y-hidden rounded-lg">
           </section>
           <section class="flex-1 rounded-b-lg p-4 bg-white">
             <div class="flex flex-row items-center justify-between">
               <h1>
                 Bingung Berbagi
               </h1>
-              <p class="py-1 px-2 bg-gray-100 rounded-lg text-gray-500" style="font-size: 12px">{{ batch.batch_name }}</p>
+              <p class="py-1 px-2 bg-gray-100 rounded-lg text-gray-500" style="font-size: 12px">Batch #{{ batch.batch }}</p>
             </div>
             <div class="flex items-center mt-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,7 +24,7 @@
               </svg>
               <p class="text-gray-500 ml-2 text-sm">{{ batch.location }}</p>
             </div>
-            <NuxtLink v-if="batch.is_done" :to="`/donations/${batch.id}`" class="w-full rounded-lg border border-orange-primary text-orange-primary mt-4 py-1 block text-center">
+            <NuxtLink v-if="batch.isDone" :to="`/donations/${batch.id}`" class="w-full rounded-lg border border-orange-primary text-orange-primary mt-4 py-1 block text-center">
               Lihat laporan
             </NuxtLink>
             <NuxtLink v-else :to="`/donations/${batch.id}`" class="w-full rounded-lg bg-orange-primary mt-4 py-1 text-white block text-center">
@@ -47,16 +47,6 @@ export default {
       default: () => ([]),
     }
   },
-  data() {
-    return {
-      //
-    }
-  },
-  computed: {
-    sortedDescBatch() {
-      return (this.batches || []).sort((a,b) => b.id - a.id);
-    }
-  }
 }
 </script>
 
