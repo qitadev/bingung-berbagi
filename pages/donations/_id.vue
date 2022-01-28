@@ -1,11 +1,13 @@
 <template>
   <div class="max-w-5xl mx-auto px-5 my-8">
     <nav>
-      <nuxt-link to="/">
+      <nuxt-link to="/" class="font-bold">
         Home
       </nuxt-link>
       >
-      Donasi
+      <span>
+        Donasi
+      </span>
     </nav>
     <div v-if="donation" class="mt-8 grid md:grid-cols-2 gap-8">
       <div>
@@ -17,7 +19,7 @@
           Bingung Berbagi Batch #{{ donation.batch }}
         </h1>
         <p class="mt-4 text-justify text-sm leading-loose">
-          Halo orang-orang baik dimanapun berada, akhir bulan ini #KitaBingungKitaBerbagi membuka donasi kembali nih untuk orang-orang yang jalanan di sekitar Yogyakarta. Donasi yang akan terkumpul akan dialokasikan untuk kebutuhan pokok, seperti makanan, minuman dan lain-lain bagi orang-orang yang membutuhkan. Langkah kecil ini harapannya bisa membantu dan mendukung satu sama lain terlebih dalam kondisi pandemi saat ini. Mengutip dari Global Hunger Index (GHI) bahwa tingkat kepalaran di Indonesia menempati urutan ketiga tertinggi di Asia Tenggara pada 2021. Indonesia mendapatkan skor indeks sebesar 18 poin atau termasuk dalam level moderat. #KitaBingungKitaBerbagi lewat donasi ini bersinergi untuk saling membantu bersama orang-orang baik semua.
+          {{ donation.description }}
         </p>
       </div>
       <div>
