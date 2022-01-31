@@ -1,7 +1,7 @@
 <template>
   <section class="w-full bg-green-primary my-20">
-    <article class="max-w-5xl px-5 mx-auto py-20 flex">
-      <section class="flex-1 mr-4">
+    <article class="max-w-5xl px-5 mx-auto py-20 flex flex-col md:flex-row">
+      <section class="flex-1 mr-0 mb-4 md:mb-0 md:mr-4">
         <template v-if="batch">
           <h2 class="text-3xl font-bold text-white">
             Segera Donasi Sekarang
