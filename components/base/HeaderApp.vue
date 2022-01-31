@@ -16,7 +16,7 @@
     <div
       :class="`${expanded ? 'max-h-80 py-4' : 'max-h-0 sm:max-h-80'} transition-max-height overflow-hidden duration-500 ease-in-out nav-wrapper sm:w-4/6 md:w-1/2 w-full flex sm:flex-row flex-col items-center sm:justify-between justify-start text-green-primary`"
     >
-      <nuxt-link to="#" class="p-2 sm:w-fit w-full sm:mt-0 mt-2 hover:text-orange-primary">Donasi</nuxt-link>
+      <nuxt-link to="/donations" class="p-2 sm:w-fit w-full sm:mt-0 mt-2 hover:text-orange-primary">Donasi</nuxt-link>
       <nuxt-link to="/gallery" class="p-2 sm:w-fit w-full sm:mt-0 mt-2 hover:text-orange-primary">Galeri</nuxt-link>
       <nuxt-link to="/about" class=" sm:w-fit p-2 w-full sm:mt-0 mt-2 hover:text-orange-primary">Tentang Kami</nuxt-link>
       <nuxt-link to="#" class="bg-green-primary px-6 py-2 rounded-lg text-white sm:w-fit w-full text-center sm:mt-0 mt-2">Hubungi Kami</nuxt-link>

@@ -5,8 +5,12 @@
         Home
       </nuxt-link>
       >
-      <span>
+      <nuxt-link to="/donations" class="font-bold">
         Donasi
+      </nuxt-link>
+      >
+      <span>
+        Batch {{ donation ? `#${donation.batch}` : '-' }}
       </span>
     </nav>
     <div v-if="donation" class="mt-8 grid md:grid-cols-2 gap-8">
