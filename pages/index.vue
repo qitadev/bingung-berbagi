@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero />
+    <Hero :next-batch="nextBatch" />
     <Counter />
     <Jumbotron :batch="nextBatch"/>
     <Donation :batches="batches" />
