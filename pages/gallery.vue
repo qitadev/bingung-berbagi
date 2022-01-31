@@ -40,6 +40,7 @@ export default {
       }, {})
     this.batches = Object.keys(this.batchPhotos)
     this.batches = this.batches.sort((a, b) => b - a)
-  }
+  },
+  fetchOnServer: false
 }
 </script>

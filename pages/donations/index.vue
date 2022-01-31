@@ -53,6 +53,7 @@ export default {
   async fetch() {
     const batches = await this.$getSheetData(0);
     this.batches = batches.sort((a, b) => b.batch - a.batch)
-  }
+  },
+  fetchOnServer: false
 }
 </script>

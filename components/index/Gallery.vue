@@ -25,6 +25,7 @@ export default {
   async fetch () {
     const images = await this.$getSheetData(1);
     this.images = images.sort((a, b) => b.id - a.id).slice(0, 6);
-  }
+  },
+  fetchOnServer: false
 }
 </script>

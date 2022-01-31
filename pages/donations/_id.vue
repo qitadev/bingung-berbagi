@@ -173,6 +173,7 @@ export default {
     const images = await this.$getSheetData(1);
     this.images = images.filter(image => image.batch === this.donation.batch);
   },
+  fetchOnServer: false,
   mounted () {
     setInterval(() => {
       const date = this.$moment(this.donation.date, 'DD-MM-YYYY').add(1, 'days');
