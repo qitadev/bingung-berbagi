@@ -9,7 +9,7 @@
         <p class="text-gray-500 font-light text-sm">Donatur yang bergabung</p>
       </div>
     </article>
-    <article class="item-wrapper border bg-white rounded-xl flex flex-row items-center w-full p-4 shadow-lg my-4 sm:my-0 sm:mx-8">
+    <article class="item-wrapper border bg-white rounded-xl flex flex-row items-center w-full p-4 shadow-lg my-4 md:my-4 md:mx-4">
       <img src="~/assets/images/index-page/batch-icon.png" alt="user icon" class="w-16">
       <div class="desc-wrap flex flex-col justify-start ml-4">
         <h1 class="text-3xl font-bold">
