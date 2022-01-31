@@ -31,10 +31,10 @@
           </li>
         </ul>
         <p v-else class="mt-4">
-          Tidak ada dokumentasi.
+          Belum ada dokumentasi.
         </p>
       </div>
-      <div v-if="donation.isDone">
+      <div v-if="donation.isDone == 1">
         <div class="rounded-lg bg-white border p-4">
           <h2 class="text-center text-xl font-bold text-green-primary">Bingung Berbagi Batch #{{ donation.batch }}</h2>
           <p class="mt-2 text-center">Donasi sudah ditutup</p>
@@ -48,7 +48,7 @@
         <div class="mt-4 grid grid-cols-4 gap-4">
           <div>
             <div class="text-4xl rounded-lg bg-white border p-4 text-center">
-              06
+              {{ countdown.days }}
             </div>
             <p class="text-center mt-2">
               HARI
@@ -56,7 +56,7 @@
           </div>
           <div>
             <div class="text-4xl rounded-lg bg-white border p-4 text-center">
-              07
+              {{ countdown.hours }}
             </div>
             <p class="text-center mt-2">
               JAM
@@ -64,7 +64,7 @@
           </div>
           <div>
             <div class="text-4xl rounded-lg bg-white border p-4 text-center">
-              10
+              {{ countdown.minutes }}
             </div>
             <p class="text-center mt-2">
               MENIT
@@ -72,7 +72,7 @@
           </div>
           <div>
             <div class="text-4xl rounded-lg bg-white border p-4 text-center">
-              59
+              {{ countdown.seconds }}
             </div>
             <p class="text-center mt-2">
               DETIK
@@ -155,6 +155,12 @@ export default {
     return {
       donation: null,
       images: [],
+      countdown: {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+      }
     }
   },
   async fetch() {
@@ -163,6 +169,15 @@ export default {
     const images = await this.$getSheetData(1);
     this.images = images.filter(image => image.batch === this.donation.batch);
   },
+  mounted () {
+    setInterval(() => {
+      const date = this.$moment(this.donation.date, 'DD-MM-YYYY');
+      this.countdown.days = date.diff(this.$moment(), 'days');
+      this.countdown.hours = date.diff(this.$moment(), 'hours') % 24;
+      this.countdown.minutes = date.diff(this.$moment(), 'minutes') % 60;
+      this.countdown.seconds = date.diff(this.$moment(), 'seconds') % 60;
+    }, 1000);
+  },
   methods: {
     formatNumber(number) {
       return new Intl.NumberFormat('id-ID', {
@@ -170,7 +185,7 @@ export default {
         currency: 'IDR',
         minimumFractionDigits: 0
       }).format(number);
-    },
-  }
+    }
+  },
 }
 </script>
