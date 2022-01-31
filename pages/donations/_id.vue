@@ -21,8 +21,27 @@
         <p class="mt-4 text-justify text-sm leading-loose">
           {{ donation.description }}
         </p>
+
+        <h2 class="inline-block mt-8 border-b-2 border-orange-primary">
+          Dokumentasi
+        </h2>
+        <ul v-if="images.length" class="mt-4 grid grid-cols-2 gap-4">
+          <li v-for="image in images" :key="image.id">
+            <img :src="image.imgUrl" alt="Foto Dokumentasi" class="w-full rounded-lg">
+          </li>
+        </ul>
+        <p v-else class="mt-4">
+          Tidak ada dokumentasi.
+        </p>
       </div>
-      <div>
+      <div v-if="donation.isDone">
+        <div class="rounded-lg bg-white border p-4">
+          <h2 class="text-center text-xl font-bold text-green-primary">Bingung Berbagi Batch #{{ donation.batch }}</h2>
+          <p class="mt-2 text-center">Donasi sudah ditutup</p>
+          <img src="~/assets/images/donation-page/closed.png" alt="Closed" class="w-64 m-auto">
+        </div>
+      </div>
+      <div v-else>
         <h2 class="text-lg font-bold">
           Donasi Akan Ditutup Dalam
         </h2>
@@ -135,11 +154,14 @@ export default {
   data () {
     return {
       donation: null,
+      images: [],
     }
   },
   async fetch() {
     const donations = await this.$getSheetData(0);
     this.donation = donations.find(donation => donation.id === this.$route.params.id);
+    const images = await this.$getSheetData(1);
+    this.images = images.filter(image => image.batch === this.donation.batch);
   },
   methods: {
     formatNumber(number) {
