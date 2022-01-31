@@ -38,8 +38,9 @@ export default {
   },
   computed: {
     nextBatch() {
-      return (this.batches || []).filter((item) => item.is_done === false)
-        .sort((a,b) => new Date(b.date_batch) - new Date(a.date_batch))[0]
+      if (this.batches.length === 0) return null;
+      const nextBatch = this.batches[0].isDone === '1' ? null : this.batches[0];
+      return nextBatch;
     }
   },
 }

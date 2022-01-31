@@ -171,7 +171,7 @@ export default {
   },
   mounted () {
     setInterval(() => {
-      const date = this.$moment(this.donation.date, 'DD-MM-YYYY');
+      const date = this.$moment(this.donation.date, 'DD-MM-YYYY').add(1, 'days');
       this.countdown.days = date.diff(this.$moment(), 'days');
       this.countdown.hours = date.diff(this.$moment(), 'hours') % 24;
       this.countdown.minutes = date.diff(this.$moment(), 'minutes') % 60;
