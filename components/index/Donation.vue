@@ -8,7 +8,7 @@
       <div v-for="batch in batches" :key="batch.id" class="inline-block mr-4">
         <article class="flex flex-col border rounded-lg">
           <section class="w-full h-44">
-            <img :src="batch.batchImg" alt="batch 1" class="w-full overflow-y-hidden rounded-lg">
+            <img :src="batch.batchImg" alt="batch 1" class="w-full h-72 overflow-y-hidden rounded-lg">
           </section>
           <section class="flex-1 rounded-b-lg p-4 bg-white">
             <div class="flex flex-row items-center justify-between">

@@ -9,7 +9,7 @@
         Tentang Kami
       </span>
     </nav>
-    <div class="mt-8 grid grid-cols-2 gap-8">
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
       <img src="~/assets/images/about-page/about.png" alt="About Image" class="rounded-lg">
       <div>
         <h1 class="text-2xl font-bold">Tentang Bingung Berbagi</h1>

@@ -9,7 +9,12 @@
         Galeri
       </span>
     </nav>
-    <template v-for="batch in batches">
+    <template v-if="isFetching">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+        <li v-for="i in 9" :key="i" class="relative pt-[56.25%] bg-gray-300 animate-pulse rounded-lg" />
+      </ul>
+    </template>
+    <template v-else v-for="batch in batches">
       <h2 :key="batch" class="mt-8 font-bold text-2xl">
         Bingung Berbagi Batch #{{batch}}
       </h2>
@@ -29,6 +34,7 @@ export default {
     return {
       batchPhotos: [],
       batches: [],
+      isFetching: true
     }
   },
   async fetch() {
@@ -40,6 +46,7 @@ export default {
       }, {})
     this.batches = Object.keys(this.batchPhotos)
     this.batches = this.batches.sort((a, b) => b - a)
+    this.isFetching = false
   },
   fetchOnServer: false
 }

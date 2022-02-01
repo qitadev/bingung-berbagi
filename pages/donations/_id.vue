@@ -102,9 +102,15 @@
                    Bank Mandiri a.n. Janneta Filza A
                  </span>
                </div>
-               <div class="mt-2 border bg-primary-bg-color px-4 py-2 rounded-lg flex justify-between items-center">
-                 1370019442942
-                 <button class="ml-2 text-xs px-2 py-1 rounded-lg border border-orange-primary text-orange-primary">
+               <div class="mt-2 border mandiri-text bg-primary-bg-color px-4 py-2 rounded-lg flex justify-between items-center">
+                 <input
+                   type="number"
+                   class="bg-primary-bg-color p-0 active:border-0 focus:border-0"
+                   value="1370019442942" disabled>
+                 <button
+                   id="mandiriButton"
+                   class="ml-2 text-xs px-2 py-1 rounded-lg border border-orange-primary text-orange-primary"
+                   @click="copyText">
                    Salin
                  </button>
                </div>
@@ -117,8 +123,14 @@
                  </span>
                </div>
                <div class="mt-2 border bg-primary-bg-color px-4 py-2 rounded-lg flex justify-between items-center">
-                 087833735341
-                 <button class="ml-2 text-xs px-2 py-1 rounded-lg border border-orange-primary text-orange-primary">
+                 <input
+                   type="number"
+                   class="bg-primary-bg-color p-0 active:border-0 focus:border-0"
+                   value="087833735341" disabled>
+                 <button
+                   id="gopayButton"
+                   class="ml-2 text-xs px-2 py-1 rounded-lg border border-orange-primary text-orange-primary"
+                   @click="copyText">
                    Salin
                  </button>
                </div>
@@ -131,8 +143,15 @@
                  </span>
                </div>
                <div class="mt-2 border bg-primary-bg-color px-4 py-2 rounded-lg flex justify-between items-center">
-                 085740993396
-                 <button class="ml-2 text-xs px-2 py-1 rounded-lg border border-orange-primary text-orange-primary">
+                 <input
+                   type="number"
+                   class="bg-primary-bg-color p-0 active:border-0 focus:border-0"
+                   value="085740993396" disabled>
+                 <button
+                   id="shopeeButton"
+                   class="ml-2 text-xs px-2 py-1 rounded-lg border border-orange-primary text-orange-primary"
+                   @click="copyText"
+                 >
                    Salin
                  </button>
                </div>
@@ -190,6 +209,17 @@ export default {
         currency: 'IDR',
         minimumFractionDigits: 0
       }).format(number);
+    },
+    copyText(event) {
+      const inputEl = event.target.parentElement.firstChild;
+      event.target.innerText = "Tersalin";
+
+      inputEl.select();
+      navigator.clipboard.writeText(inputEl.value);
+
+      setTimeout(() => {
+        event.target.innerText = "Salin";
+      }, 2000)
     }
   },
 }
