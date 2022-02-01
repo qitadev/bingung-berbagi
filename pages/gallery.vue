@@ -10,15 +10,15 @@
       </span>
     </nav>
     <template v-if="isFetching">
-      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+      <ul class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
         <li v-for="i in 9" :key="i" class="relative pt-[56.25%] bg-gray-300 animate-pulse rounded-lg" />
       </ul>
     </template>
-    <template v-else v-for="batch in batches">
+    <template v-for="batch in batches" v-else>
       <h2 :key="batch" class="mt-8 font-bold text-2xl">
         Bingung Berbagi Batch #{{batch}}
       </h2>
-      <ul :key="`A${batch}`" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+      <ul :key="`A${batch}`" class="grid sm-grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         <li v-for="photo in batchPhotos[batch]" :key="photo.id" class="w-full relative pt-[56.25%]">
           <img :src="photo.imgUrl" :alt="`Foto batch #${batch}`" class="absolute inset-0 rounded-lg w-full h-full object-cover">
         </li>
