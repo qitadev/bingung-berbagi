@@ -25,11 +25,11 @@
       </ul>
     </template>
     <template v-else>
-      <ul class="grid grid-cols-1 580:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
         <li v-for="batch in batches" :key="batch.id" class="inline-block mr-4">
           <article class="flex flex-col border rounded-lg">
             <section class="w-full h-44">
-              <img :src="batch.batchImg" alt="batch 1" class="w-full h-72 overflow-y-hidden rounded-lg">
+              <img :src="batch.batchImg" alt="batch 1" class="w-full h-72 overflow-y-hidden rounded-lg object-cover">
             </section>
             <section class="flex-1 rounded-b-lg p-4 bg-white">
               <div class="flex flex-row items-center justify-between">
