@@ -36,7 +36,14 @@
         </section>
         <section id="ig-feeds" class="w-full sm:w-1/4 flex flex-col justify-start mt-6 sm:mt-0">
           <h1 class="font-semibold" style="font-size: 16px">Instagram Feeds</h1>
-
+          <!--WIDGET DARI WOXO-->
+          <div
+            loading="lazy"
+            data-mc-src="8110cafd-569d-44a6-9a70-db7dd00871e1#instagram"></div>
+          <script
+            src="https://cdn2.woxo.tech/a.js#61f9205c420c7d0021f3b024"
+            async data-usrc>
+          </script>
         </section>
       </section>
     </article>

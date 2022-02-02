@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-5xl mx-auto px-5 my-8">
+  <div class="w-full xs:max-w-5xl mx-auto px-5 my-8">
     <nav>
       <nuxt-link to="/" class="font-bold">
         Home
