@@ -17,13 +17,14 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '#KitaBingung KitaBerbagi merupakan gerakan sosial sekaligus wadah donasi untuk memberi serta berbagi kepada kaum duafa khususnya orang jalanan. Dana yang terkumpul berasal dari orang-orang baik yang secara sukarela membantu tim #KitaBingung KitaBerbagi untuk mewujudkan tujuan mulianya.' },
       { name: 'format-detection', content: 'telephone=no' },
+    ],
+    link: [
       { rel: 'icon', type: 'image/x-icon', href: '/bingung-berbagi/favicon.ico' },
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/bingung-berbagi/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/bingung-berbagi/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/bingung-berbagi/favicon-16x16.png' },
       { rel: 'manifest', href: '/bingung-berbagi/site.webmanifest' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
