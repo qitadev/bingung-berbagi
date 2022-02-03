@@ -1,3 +1,5 @@
+import { getSheetData } from './plugins/google-sheets-mutator';
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -81,4 +83,14 @@ export default {
       },
     },
   },
+
+  generate: {
+    routes() {
+      return getSheetData(0).then(data => {
+        return data.map(item => {
+          return `/donations/${item.id}`
+        })
+      });
+    }
+  }
 }
