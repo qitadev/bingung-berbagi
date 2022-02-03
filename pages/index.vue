@@ -3,7 +3,7 @@
     <Hero :next-batch="nextBatch" />
     <Counter />
     <Jumbotron :batch="nextBatch"/>
-    <Donation :batches="batches" />
+    <Donation :batches="batches" :is-fetching="$fetchState.pending" />
     <Gallery />
     <Contact />
   </div>

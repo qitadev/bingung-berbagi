@@ -4,7 +4,20 @@
     <h2 class="font-bold text-2xl leading-normal">
       Berbagi Senyuman dan <br> Berbagi Kebahagiaan Bersama Kami
     </h2>
-    <section v-if="batches" class="w-full py-8 overflow-auto whitespace-nowrap">
+    <ul v-if="isFetching" class="w-full py-8 overflow-auto whitespace-nowrap">
+      <li v-for="i in 6" :key="i" class="inline-block mr-4 w-[290px] h-[314px]">
+        <article class="flex flex-col border rounded-lg w-full h-full ">
+          <div class="w-full h-44 bg-gray-300 animate-pulse rounded-t-lg" />
+          <section class="flex-1 rounded-b-lg p-4 bg-white">
+            <div class="w-full h-4 bg-gray-300 animate-pulse rounded-full" />
+            <div class="mt-2 w-3/4 h-3 bg-gray-300 animate-pulse rounded-full" />
+            <div class="mt-2 w-1/2 h-3 bg-gray-300 animate-pulse rounded-full" />
+            <div class="mt-2 w-full h-4 bg-gray-300 animate-pulse rounded-full" />
+          </section>
+        </article>
+      </li>
+    </ul>
+    <section v-else-if="batches" class="w-full py-8 overflow-auto whitespace-nowrap">
       <div v-for="batch in batches" :key="batch.id" class="inline-block mr-4">
         <article class="flex flex-col border rounded-lg">
           <section class="w-full h-44">
@@ -45,11 +58,11 @@ export default {
     batches: {
       type: Array,
       default: () => ([]),
+    },
+    isFetching: {
+      type: Boolean,
+      default: () => false,
     }
   },
 }
 </script>
-
-<style scoped>
-
-</style>
