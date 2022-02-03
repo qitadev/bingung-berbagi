@@ -8,15 +8,19 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'bingung-berbagi',
+    title: 'Bingung Berbagi - Kita Bingung Kita Berbagi',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'id',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: '#KitaBingung KitaBerbagi merupakan gerakan sosial sekaligus wadah donasi untuk memberi serta berbagi kepada kaum duafa khususnya orang jalanan. Dana yang terkumpul berasal dari orang-orang baik yang secara sukarela membantu tim #KitaBingung KitaBerbagi untuk mewujudkan tujuan mulianya.' },
       { name: 'format-detection', content: 'telephone=no' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/bingung-berbagi/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/bingung-berbagi/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/bingung-berbagi/favicon-16x16.png' },
+      { rel: 'manifest', href: '/bingung-berbagi/site.webmanifest' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
