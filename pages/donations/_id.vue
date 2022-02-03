@@ -65,7 +65,7 @@
         <h2 class="text-lg font-bold">
           Donasi Akan Ditutup Dalam
         </h2>
-        <div class="mt-4 grid grid-cols-4 gap-4">
+        <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div>
             <div class="text-4xl rounded-lg bg-white border p-4 text-center">
               {{ countdown.days }}
