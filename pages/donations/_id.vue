@@ -13,7 +13,23 @@
         Batch {{ donation ? `#${donation.batch}` : '-' }}
       </span>
     </nav>
-    <div v-if="donation" class="mt-8 grid md:grid-cols-2 gap-8">
+    <div v-if="$fetchState.pending" class="mt-8 grid md:grid-cols-2 gap-8">
+      <div class="w-full h-96 animate-pulse bg-gray-300 rounded-lg" />
+      <div>
+        <div class="w-full h-8 animate-pulse bg-gray-300 rounded-lg" />
+        <div class="mt-4 w-3/4 h-8 animate-pulse bg-gray-300 rounded-lg" />
+        <div class="mt-8 w-1/2 h-4 animate-pulse bg-gray-300 rounded-lg" />
+        <div class="mt-4 w-1/2 h-4 animate-pulse bg-gray-300 rounded-lg" />
+        <div class="mt-4 w-1/2 h-4 animate-pulse bg-gray-300 rounded-lg" />
+        <div class="mt-4 w-1/2 h-4 animate-pulse bg-gray-300 rounded-lg" />
+        <div class="mt-4 w-1/2 h-4 animate-pulse bg-gray-300 rounded-lg" />
+        <div class="mt-4 w-1/2 h-4 animate-pulse bg-gray-300 rounded-lg" />
+      </div>
+    </div>
+    <p v-else-if="$fetchState.error" class="mt-8">
+      Terjadi error :( Silakan muat ulang halaman.
+    </p>
+    <div v-else-if="donation" class="mt-8 grid md:grid-cols-2 gap-8">
       <div>
         <img :src="donation.batchImg" alt="Foto Batch" class="w-full rounded-lg border">
         <p class="inline-block mt-8 border-b-2 border-orange-primary">
