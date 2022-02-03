@@ -6,7 +6,7 @@
     </h2>
     <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
       <template v-if="$fetchState.pending">
-        <div v-for="i in 6" :key="i" class="w-full relative pt-[56.25%] bg-gray-300 animate-pulse rounded-lg" />
+        <div v-for="i in 6" :key="`Skeleton${i}`" class="w-full relative pt-[56.25%] bg-gray-300 animate-pulse rounded-lg" />
       </template>
       <li v-for="image in images" :key="image.id" class="w-full relative pt-[56.25%]">
         <img :src="image.imgUrl" :alt="`Foto batch #${image.batch}`" class="absolute inset-0 rounded-lg w-full h-full object-cover">
