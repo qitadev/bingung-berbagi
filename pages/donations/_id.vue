@@ -118,10 +118,10 @@
                   Bank Mandiri a.n. Janneta Filza A
                 </span>
               </div>
-              <div class="mt-2 border mandiri-text bg-primary-bg-color px-4 py-2 rounded-lg flex justify-between items-center">
+              <div class="mt-2 border bg-primary-bg-color px-4 py-2 rounded-lg flex justify-between items-center">
                 <input
                   type="number"
-                  class="bg-primary-bg-color p-0 active:border-0 focus:border-0"
+                  class="bg-primary-bg-color p-0 active:border-0 focus:border-0 flex-1 w-full"
                   value="1370019442942" disabled>
                 <button
                   id="mandiriButton"
@@ -141,7 +141,7 @@
               <div class="mt-2 border bg-primary-bg-color px-4 py-2 rounded-lg flex justify-between items-center">
                 <input
                   type="number"
-                  class="bg-primary-bg-color p-0 active:border-0 focus:border-0"
+                  class="bg-primary-bg-color p-0 active:border-0 focus:border-0 flex-1 w-full"
                   value="087833735341" disabled>
                 <button
                   id="gopayButton"
@@ -161,7 +161,7 @@
               <div class="mt-2 border bg-primary-bg-color px-4 py-2 rounded-lg flex justify-between items-center">
                 <input
                   type="number"
-                  class="bg-primary-bg-color p-0 active:border-0 focus:border-0"
+                  class="bg-primary-bg-color p-0 active:border-0 focus:border-0 flex-1 w-full"
                   value="085740993396" disabled>
                 <button
                   id="shopeeButton"
