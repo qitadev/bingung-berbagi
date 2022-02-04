@@ -10,10 +10,10 @@
     </article>
     <form name="collaborationForm" class="w-full sm:w-2/3 flex flex-col bg-white px-2 py-6 rounded-lg border mt-6 sm:mt-0 shadow" @submit.prevent="submitForm">
       <div v-if="isSuccess" class="mx-4 mb-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
-        Mensubmit formulir <b>berhasil</b>!
+        Data berhasil disimpan.
       </div>
       <div v-if="isError" class="mx-4 p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg" role="alert">
-        Mensubmit formulir <b>gagal</b>!
+        Data gagal disimpan. Silakan coba lagi.
       </div>
       <section class="form-group flex flex-col sm:flex-row sm:justify-between w-full">
         <article id="field_name" class="flex flex-col justify-start w-full sm:w-1/2 px-4 sm:px-2 md:px-4">
