@@ -19,7 +19,7 @@
       <nuxt-link to="/donations" class="p-2 sm:w-fit w-full sm:mt-0 mt-2 hover:text-orange-primary">Donasi</nuxt-link>
       <nuxt-link to="/gallery" class="p-2 sm:w-fit w-full sm:mt-0 mt-2 hover:text-orange-primary">Galeri</nuxt-link>
       <nuxt-link to="/about" class=" sm:w-fit p-2 w-full sm:mt-0 mt-2 hover:text-orange-primary">Tentang Kami</nuxt-link>
-      <nuxt-link to="#" class="bg-green-primary px-6 py-2 rounded-lg text-white sm:w-fit w-full text-center sm:mt-0 mt-2">Hubungi Kami</nuxt-link>
+      <a href="https://wa.me/6287833735341" target="_blank" class="bg-green-primary px-6 py-2 rounded-lg text-white sm:w-fit w-full text-center sm:mt-0 mt-2">Hubungi Kami</a>
     </div>
   </nav>
 </template>
