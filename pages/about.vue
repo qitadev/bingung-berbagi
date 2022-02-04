@@ -25,7 +25,7 @@
       <h2 class="text-2xl font-bold text-center">
         Bersama Kami
       </h2>
-      <ul class="mt-8 flex flex-wrap justify-center">
+      <ul class="mt-8 flex flex-wrap sm:justify-center">
         <li class="flex items-center my-4">
           <img src="~/assets/images/about-page/adim.png" alt="Foto Adim" class="w-24">
           <div class="p-8">
