@@ -182,6 +182,13 @@
               Gunakan kode unik "00{{ donation.batch }}" <b>contoh: {{ formatNumber(100000 + +donation.batch) }}</b> serta deskripsi transfer <b>"Bingung Berbagi #{{ donation.batch }}"</b> agar kami mudah menemukan niat baik kamu ya!
             </p>
           </blockquote>
+          <hr class="my-8">
+          <button type="button" class="w-full rounded-lg bg-orange-primary text-white py-2 px-4 block text-center" @click="share">
+            Share
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 inline h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -236,6 +243,17 @@ export default {
       setTimeout(() => {
         event.target.innerText = "Salin";
       }, 2000)
+    },
+    share() {
+      if (navigator.share) {
+        navigator.share({
+          title: `Bingung Berbagi Batch #${this.donation.batch}`,
+          text: 'Ayo sama-sama kita bantu teman kita yang lebih membutuhkan!',
+          url: window.location.href,
+        })
+          .then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
+      }
     }
   },
 }
