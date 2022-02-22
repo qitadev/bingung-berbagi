@@ -59,6 +59,9 @@
           <h2 class="text-center text-xl font-bold text-green-primary">Bingung Berbagi Batch #{{ donation.batch }}</h2>
           <p class="mt-2 text-center">Donasi sudah ditutup</p>
           <img src="~/assets/images/donation-page/closed.png" alt="Closed" class="w-64 m-auto">
+          <a :href="donation.report" target="_blank" rel="noopener noreferrer" class="w-full rounded-lg border border-orange-primary text-orange-primary py-2 px-4 block text-center">
+            Lihat Laporan
+          </a>
         </div>
       </div>
       <div v-else>
