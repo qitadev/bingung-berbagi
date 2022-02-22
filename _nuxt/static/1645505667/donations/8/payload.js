@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/donations/8", {data:[{}],fetch:{},mutations:void 0});

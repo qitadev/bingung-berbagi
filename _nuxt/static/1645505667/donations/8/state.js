@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002Fbingung-berbagi\u002F_nuxt\u002Fstatic\u002F1645505667",layout:"default",error:a,serverRendered:true,routePath:"\u002Fdonations\u002F8",config:{_app:{basePath:"\u002Fbingung-berbagi\u002F",assetsPath:"\u002Fbingung-berbagi\u002F_nuxt\u002F",cdnURL:a}}}}(null));
