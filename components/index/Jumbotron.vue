@@ -9,7 +9,7 @@
           <p class="text-white mt-2">
             Bingung Berbagi #{{batch.batch}}
           </p>
-          <NuxtLink :to="`/donations/${batch.id}`" class="block mt-4 px-4 py-2 w-44 rounded-md bg-orange-primary text-white text-center">Yuk Donasi</NuxtLink>
+          <NuxtLink :to="`/donations/details?id=${batch.id}`" class="block mt-4 px-4 py-2 w-44 rounded-md bg-orange-primary text-white text-center">Yuk Donasi</NuxtLink>
         </template>
         <template v-else>
           <h2 class="text-3xl font-bold text-white">
