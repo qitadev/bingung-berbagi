@@ -27,7 +27,9 @@
         <h2 class="font-bold uppercase mb-5">Informasi</h2>
         <ul class="text-sm">
           <li class="mb-5">
-            <a href="mailto:kitabingungberbagi@gmail.com" class="hover:underline">kitabingungberbagi@gmail.com</a>
+            <a href="mailto:kitabingungkitaberbagi@gmail.com" class="hover:underline">
+              kitabingungkitaberbagi@gmail.com
+            </a>
           </li>
           <li class="mb-5">
             <a href="tel:+6287833735341" class="hover:underline">+62 878-3373-5341</a>
